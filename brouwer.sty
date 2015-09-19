@@ -1,0 +1,57 @@
+\usepackage{bigfoot}
+\usepackage{amssymb}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{example}[thm]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\numberwithin{equation}{section}
+
+\newcommand\EdMark[1]{{\color{gray} #1}}
+
+\DeclareNewFootnote{Ed}
+\renewcommand{\thefootnoteEd}{\fnsymbol{footnoteEd}}
+\MakePerPage{footnoteEd}
+
+\DeclareNewFootnote{T}
+\renewcommand{\thefootnoteT}{\tiny\arabic{footnoteT}\footnotesize)}
+
+\makeatletter%
+\FootnoteSpecific{Ed}%
+\newcommand\@makefntext[1]{%
+  \parindent 1em%
+  \noindent%
+  \EdMark{%
+    \hb@xt@1.8em{\hss\@makefnmark}\ \ #1%
+  }%
+}
+\FootnoteSpecific{T}%
+\newcommand\@makefntext[1]{%
+  \parindent 1em%
+  \noindent%
+  \hb@xt@1.8em{\hss\@makefnmark}\ \ #1%
+}
+\makeatother
+
+
+\newcommand\Title[3]{%
+  \noindent%
+  \hangindent=3em%
+  \hangafter=1%
+  \textbf{#1.}\ ---\ \emph{#2} By #3%
+  \bigskip%
+}
+
+\newcommand\Communicated[1]{%
+  \begin{center}%
+    \small (#1)%
+  \end{center}%
+  \bigskip\bigskip%
+}
+

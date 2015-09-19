@@ -1,0 +1,10 @@
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.bbl
+*.blg
+*.prv
+paper/auto
+*.fmt
+_region_.*
