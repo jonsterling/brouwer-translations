@@ -17,6 +17,15 @@
 \newcommand\EdMark[1]{{\color{gray} #1}}
 \newcommand\Uncertain[1]{{\color{red} #1}}
 
+\makeatletter
+\newcommand\Sequence[2][\,]{%
+  \def\nextitem{\def\nextitem{#1}}%
+  \@for\@el:=#2\do{%
+    \nextitem\@el
+  }%
+}
+\makeatother
+
 \DeclareNewFootnote{Ed}
 \renewcommand{\thefootnoteEd}{\fnsymbol{footnoteEd}}
 \MakePerPage{footnoteEd}
